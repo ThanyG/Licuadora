@@ -1,18 +1,15 @@
-let estadoLicuadora = 'apagada'
+let licuadoraEncendida = false
 let sonidoLicuadora = document.getElementById('blender-sound')
 let buttonLicuadora = document.getElementById('blender-button-sound')
 let licuadora = document.getElementById('blender')
 
 function controlarLicuadora() {
-  if (estadoLicuadora == 'apagada') {
-    estadoLicuadora = 'encendido'
     hacerSonar()
-    licuadora.classList.add('active')
-  } else {
-    estadoLicuadora = 'apagada'
-    hacerSonar()
-    licuadora.classList.remove('active')
-  }
+    /** 
+     * @description toggle añade o quita una clase dependiendo de si existe o no existe :) 
+     * @ref https://www.w3schools.com/howto/howto_js_toggle_class.asp  
+    */
+    licuadora.classList.toggle('active')
 }
 function hacerSonar() {
   if (sonidoLicuadora.paused) {
